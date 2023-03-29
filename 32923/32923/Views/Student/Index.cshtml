@@ -1,0 +1,21 @@
+﻿@model StdGrp
+@{Layout=null;}
+
+<h1 style="color:red" ; text-align:center">Students: </h1>
+<ul>
+
+    @foreach (var item in Model.Students)
+    {
+        string text = item.Point <= 65 ? "Mezun Olmadi" : $"Point: {item.Point}";
+        <li>@($"ID: {item.Id} - {text} - Fullname: {item.FullName}")</li>
+    }
+</ul>
+
+<h1 style="color:red" ; text-align:center">Groups: </h1>
+<ul>
+
+    @foreach (var item in Model.Groups)
+    {
+        <li>@($"ID: {item.Id} -  Name: {item.Name}")</li>
+    }
+</ul>

@@ -1,0 +1,17 @@
+﻿@model Student
+@{Layout=null;}
+
+@{
+    if (Model == null)
+    {
+        <h1 style="color:red; text-align:center">Bele bir user yoxdur</h1>
+
+    }
+    else
+    {
+        <h1 style="color:blue">Axtardiginiz student:</h1>
+        string text = Model.Point <= 65 ? "Mezun Olmadi" : $"Point: {Model.Point}";
+        <li>@($"ID: {Model.Id} - {text} - Fullname: {Model.FullName}")</li>
+    }
+
+}
